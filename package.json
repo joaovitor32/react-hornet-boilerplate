@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "test": "jest",
     "dev:development": "webpack --mode=development ./webpack/webpack.dev.js --stats-error-details",
-    "build": "webpack",
+    "build": "webpack  --mode=prod ./webpack/webpack.prod.js --stats-error-details",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
