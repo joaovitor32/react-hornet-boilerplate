@@ -1,10 +1,17 @@
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-export default {
-  entry: path.join(path.resolve(path.dirname(""), "src", "index.tsx")),
+module.exports = {
+  name: "browser",
+  entry: path.resolve(__dirname, "src/index.tsx"),
+  resolve: {
+    extensions: [".js", ".tsx", ".ts", ".json"],
+  },
   output: {
-    path: path.resolve(path.resolve(path.dirname(""), "dist")),
+    path: path.resolve(__dirname, "dist"),
+  },
+  resolve: {
+    modules: [".", "node_modules"],
   },
   module: {
     rules: [
@@ -48,9 +55,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(
-        path.resolve(path.dirname(""), "public", "index.html")
-      ),
+      template: path.join(__dirname, "public", "index.html"),
     }),
   ],
 };
