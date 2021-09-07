@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
-  extensions: [".js", ".jsx", ".json", ".ts", ".tsx"], // other stuff
+  extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   resolve: {
     modules: [".", "node_modules"],
   },
@@ -25,7 +25,7 @@ module.exports = {
     https: false,
     stream: false,
     crypto: false,
-    "crypto-browserify": require.resolve("crypto-browserify"), //if you want to use this module also don't forget npm i crypto-browserify
+    "crypto-browserify": require.resolve("crypto-browserify"),
   },
 
   module: {
